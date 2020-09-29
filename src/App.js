@@ -1,24 +1,23 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Piano from './components/piano.js';
+import PianoQuiz from './layouts/pianoQuiz.js'
+
+const QUIZZES = [
+  {
+    name: "Single notes - easy",
+    notes: ["C1", "D3", "F#2"],
+    speed: "1"
+  },
+]
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Welcome to piano quiz</h1>
+      <PianoQuiz quiz={QUIZZES[0]} />
     </div>
   );
 }
