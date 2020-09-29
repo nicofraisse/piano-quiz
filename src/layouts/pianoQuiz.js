@@ -1,26 +1,18 @@
 import React, { useState } from 'react';
-import Piano from '../components/piano';
+import Piano from '../components/Piano';
 
-const quizAnswerData = [
-  {
-    attempts: 2, // 0 if passed
-    hints: ["show notes"]
-  }
-]
+// const quizAnswerData = [
+//   {
+//     attempts: 2, // 0 if passed
+//     hints: ["show notes"]
+//   }
+// ]
 
-const quiz_data = [
-  {
-    name: "Easy quiz",
-    quizzes: [
-      ["C1", "D1", "E1"],
-      ["C2", "D2", "E2"]
-    ]
-  }
-]
 
-const PianoQuiz = (quiz) => {
+
+const PianoQuiz = (props) => {
   return (
-    <Piano quiz={quiz_data[0]} />
+    <Piano quiz={props.quiz} />
   )
 }
 

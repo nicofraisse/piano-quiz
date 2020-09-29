@@ -7,7 +7,7 @@ import soundPlay from '../util/soundPlay'
 import sleepAsync from '../util/sleepAsync'
 
 // Components
-import PianoNote from './pianoNote';
+import PianoNote from './PianoNote';
 
 // Assets
 import C1 from '../assets/sounds/C1.wav';
