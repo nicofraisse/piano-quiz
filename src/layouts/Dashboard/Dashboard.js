@@ -1,26 +1,20 @@
 import React from 'react';
 import classes from './Dashboard.module.css';
-import QuizCreate from '../../components/Quiz/QuizCreate/QuizCreate';
-import QuizCard from '../../components/Quiz/QuizCards/QuizCard/QuizCard';
+import CreateQuiz from './CreateQuiz/CreateQuiz';
+import ChooseQuiz from './ChooseQuiz/ChooseQuiz';
+import QuizCards from '../../components/Quiz/QuizCards/QuizCards';
 
 const Dashboard = (props) => {
-  console.log(props.quizData)
-  const quizCards = props.quizData.map((quiz, index) => {
-    return <QuizCard
-            key={index}
-            quiz={quiz}
-            click={() => props.selectQuiz(quiz)}/>
-  });
-
   return (
     <div className={classes.Dashboard}>
-      { props.show ?
-        <QuizCreate click={props.submitQuiz} />
+      { props.showCreateQuiz
+        ?
+        <CreateQuiz click={props.submitQuiz} />
         :
-        <div>
-          { quizCards }
-          <div onClick={props.click}>Create quiz</div>
-        </div>
+        <ChooseQuiz
+          quizzes={props.quizData}
+          clickOnQuiz={props.selectQuiz}
+          createQuiz={props.click} />
       }
       <div onClick={props.click}>Back</div>
     </div>
