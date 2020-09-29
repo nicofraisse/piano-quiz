@@ -1,19 +1,97 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Piano from '../../../components/Piano/Piano';
+import NoteCard from '../../../components/Quiz/NoteCard/NoteCard';
+import loadDatabase from '../../../data/loadDatabase';
+import loadRawDatabase from '../../../data/loadRawDatabase';
 
-// WIP
 const QuizCreate = (props) => {
   const [value, setValue] = useState('');
+  const [selectedSubquizNotes, setSelectedSubquizNotes] = useState([]);
+  const [selectedQuizzes, setSelectedQuizzes] = useState([])
+  const [inputData, setInputData] = useState({})
+  const [submitClicked, setSubmitClicked] = useState(false)
 
-  const handleInputName = (v) =>{
-    setValue(v)
+  const addNote = (note) => {
+    const id = selectedSubquizNotes.length;
+    setSelectedSubquizNotes([
+      ...selectedSubquizNotes,
+      {
+        id: id,
+        note: note
+      }
+    ])
   }
 
-  const handleInputDifficulty = () => {
-
+  const removeNote = (note) => {
+    setSelectedSubquizNotes(selectedSubquizNotes.filter((selectedNote) => {
+      return selectedNote.id !== note.id
+    }))
   }
 
-  console.log(value);
+  const handleInputName = (name) =>{
+    setInputData({
+      ...inputData,
+      name: name
+    })
+  }
+
+  const handleInputDifficulty = (difficulty) => {
+    setInputData({
+      ...inputData,
+      difficulty: difficulty
+    })
+  }
+
+  const notesArray = () => selectedSubquizNotes.map(ssn => ssn.note)
+
+  const submitSet = (event, noteData) => {
+    event.preventDefault();
+    setSelectedQuizzes((prevState) => {
+      return ([
+        ...prevState,
+        notesArray()
+      ])
+    })
+  }
+
+  const submitQuiz = (event, quizData) => {
+    event.preventDefault();
+
+    const finalQuizData = {
+      name: inputData["name"],
+      difficulty: inputData["difficulty"],
+      quizzes: [...quizData["quizzes"], notesArray()]
+    };
+
+    (async () => {
+      const RAW_DB = await loadRawDatabase()
+      const tx = RAW_DB.transaction('store1', 'readwrite')
+      const store = await tx.objectStore('store1')
+      await store.put(finalQuizData, props.currentQuizzes.length)
+      await tx.done
+    })();
+  }
+
+  useEffect(() => {
+    setSelectedSubquizNotes([]);
+    console.log(selectedQuizzes);
+  }, [selectedQuizzes])
+
+
+  useEffect(() => {
+    setInputData({
+      ...inputData,
+      quizzes: selectedQuizzes
+    })
+  }, [selectedSubquizNotes])
+
+  useEffect(() => {
+    console.log(props.currentQuizzes)
+  })
+
+  const noteCards = selectedSubquizNotes.map((selectedNote, i) => {
+    return <NoteCard key={i} note={selectedNote.note} click={() => removeNote(selectedNote)} />
+  })
 
   return (
     <div>
@@ -25,7 +103,7 @@ const QuizCreate = (props) => {
           id="quiz-name"
           name="Quiz Name"
           placeholder="Enter quiz name..."/>
-        <label htmlFor="lname">Last name:</label>
+        <label htmlFor="lname">Difficulty:</label>
         <select
           name="Quiz Difficulty"
           id="quiz-difficulty"
@@ -36,13 +114,18 @@ const QuizCreate = (props) => {
           <option value="4">Expert</option>
         </select>
         <div>notes</div>
-        <input type="submit" value="Submit" onClick={(value) => props.click(value)}/>
+        <input type="submit" value="Next set" onClick={(event) => submitSet(event, selectedSubquizNotes)}/>
+        <input type="submit" value="Submit" onClick={(event) => submitQuiz(event, inputData)}/>
       </form>
 
-      <Piano />
+      {
+        noteCards
+      }
+
+      <Piano form sendNoteToForm={addNote}/>
+
     </div>
   );
 }
-
 
 export default QuizCreate;

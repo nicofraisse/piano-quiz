@@ -9,7 +9,9 @@ const Dashboard = (props) => {
     <div className={classes.Dashboard}>
       { props.showCreateQuiz
         ?
-        <CreateQuiz click={props.submitQuiz} />
+        <CreateQuiz
+          click={props.submitQuiz}
+          currentQuizzes={props.quizData}/>
         :
         <ChooseQuiz
           quizzes={props.quizData}

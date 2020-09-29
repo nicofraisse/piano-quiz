@@ -17,22 +17,24 @@ const Piano = (props) => {
     soundPlay(audioClips[note]);
     if (props.quiz) {
       props.sendNoteToGame(note);
+    } else if (props.form) {
+      props.sendNoteToForm(note)
     }
   }
 
   Howler.volume(0.9) // can make component to adjust volume
 
-  const piano = Object.keys(audioClips).map((note, index) =>
-    <PianoNote
-      key={index}
-      click={() => pressNote(note)}
-      label={note}
-    />
-  );
-
   return (
     <div>
-      {piano}
+      {
+        Object.keys(audioClips).map((note, index) =>
+          <PianoNote
+            key={index}
+            click={() => pressNote(note)}
+            label={note}
+          />
+        )
+      }
     </div>
   );
 }
