@@ -1,3 +1,3 @@
 # Piano quiz
 
-Test your perfect/relative pitch! Select a difficulty, or create your own awesome quizzes and share them with your friends!
+Test your perfect/relative pitch! Play the existing games, or create your own awesome quizzes to share with friends!
