@@ -5,7 +5,7 @@ const QuizCard = (props) => {
     <div onClick={props.click}>
       {props.quiz.name}
     </div>
-  )
+  );
 }
 
 export default QuizCard;

@@ -15,7 +15,7 @@ const Piano = (props) => {
       click={() => props.pressNote(note)}
       label={note}
     />
-  )
+  );
 
   return (
     <div>
@@ -25,7 +25,7 @@ const Piano = (props) => {
       {piano}
       <h3>{props.gameFinished ? "Game finished" : null}</h3>
     </div>
-  )
+  );
 }
 
 export default Piano;

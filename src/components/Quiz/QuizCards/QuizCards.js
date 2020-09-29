@@ -5,7 +5,7 @@ const QuizCards = (props) => {
     <div>
 
     </div>
-  )
+  );
 }
 
 export default QuizCards;

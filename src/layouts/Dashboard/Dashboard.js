@@ -10,7 +10,7 @@ const Dashboard = (props) => {
             key={index}
             quiz={quiz}
             click={() => props.selectQuiz(quiz)}/>
-  })
+  });
 
   return (
     <div className={classes.Dashboard}>
@@ -24,7 +24,7 @@ const Dashboard = (props) => {
       }
       <div onClick={props.click}>Back</div>
     </div>
-  )
+  );
 }
 
 export default Dashboard;

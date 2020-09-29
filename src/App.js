@@ -16,19 +16,19 @@ import './App.css';
 
 
 const App = () => {
-  const [ dashboardShowing, setDashboardShowing ] = useState(false)
-  const [ createQuizShowing, setCreateQuizShowing ] = useState(false)
-  const [ activeQuiz, setActiveQuiz ] = useState(null)
+  const [ dashboardShowing, setDashboardShowing ] = useState(false);
+  const [ createQuizShowing, setCreateQuizShowing ] = useState(false);
+  const [ activeQuiz, setActiveQuiz ] = useState(null);
 
   const startQuiz = (quiz) => {
-    setDashboardShowing(false)
-    setActiveQuiz(quiz)
-    console.log(quiz)
+    setDashboardShowing(false);
+    setActiveQuiz(quiz);
+    console.log(quiz);
   }
 
   const handleQuizSubmit = (event) => {
-    event.preventDefault()
-    console.log(event)
+    event.preventDefault();
+    console.log(event);
   }
 
   return (

@@ -24,6 +24,6 @@ const defaultQuiz = [
       ["C#1"]
     ]
   }
-]
+];
 
 export default defaultQuiz;

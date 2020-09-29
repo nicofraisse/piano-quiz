@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 
+
+// WIP
 const QuizCreate = (props) => {
-  const [value, setValue] = useState('')
+  const [value, setValue] = useState('');
+
   const handleInputName = (v) =>{
     setValue(v)
-
   }
 
   const handleInputDifficulty = () => {
 
   }
 
-  console.log(value)
+  console.log(value);
 
   return (
     <form>
@@ -35,7 +37,7 @@ const QuizCreate = (props) => {
       <div>notes</div>
       <input type="submit" value="Submit" onClick={(value) => props.click(value)}/>
     </form>
-  )
+  );
 }
 
 
