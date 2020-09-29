@@ -3,38 +3,38 @@ import React, { useState, useEffect } from 'react';
 import { Howler } from 'howler';
 
 // Utility functions
-import soundPlay from '../util/soundPlay'
-import sleepAsync from '../util/sleepAsync'
+import soundPlay from '../../util/soundPlay'
+import sleepAsync from '../../util/sleepAsync'
 
 // Components
-import PianoNote from './PianoNote';
+import PianoNote from './PianoNote/PianoNote';
 
 // Assets
-import C1 from '../assets/sounds/C1.wav';
-import C1_sharp from '../assets/sounds/C1_sharp.wav';
-import D1 from '../assets/sounds/D1.wav';
-import D1_sharp from '../assets/sounds/D1_sharp.wav'
-import E1 from '../assets/sounds/E1.wav'
-import F1 from '../assets/sounds/F1.wav'
-import F1_sharp from '../assets/sounds/F1_sharp.wav'
-import G1 from '../assets/sounds/G1.wav'
-import G1_sharp from '../assets/sounds/G1_sharp.wav'
-import A1 from '../assets/sounds/A1.wav'
-import A1_sharp from '../assets/sounds/A1_sharp.wav'
-import B1 from '../assets/sounds/B1.wav'
-import C2 from '../assets/sounds/C2.wav'
-import C2_sharp from '../assets/sounds/C2_sharp.wav'
-import D2 from '../assets/sounds/D2.wav'
-import D2_sharp from '../assets/sounds/D2_sharp.wav'
-import E2 from '../assets/sounds/E2.wav'
-import F2 from '../assets/sounds/F2.wav'
-import F2_sharp from '../assets/sounds/F2_sharp.wav'
-import G2 from '../assets/sounds/G2.wav'
-import G2_sharp from '../assets/sounds/G2_sharp.wav'
-import A2 from '../assets/sounds/A2.wav'
-import A2_sharp from '../assets/sounds/A2_sharp.wav'
-import B2 from '../assets/sounds/B2.wav'
-import C3 from '../assets/sounds/C3.wav'
+import C1 from '../../assets/sounds/C1.wav';
+import C1_sharp from '../../assets/sounds/C1_sharp.wav';
+import D1 from '../../assets/sounds/D1.wav';
+import D1_sharp from '../../assets/sounds/D1_sharp.wav'
+import E1 from '../../assets/sounds/E1.wav'
+import F1 from '../../assets/sounds/F1.wav'
+import F1_sharp from '../../assets/sounds/F1_sharp.wav'
+import G1 from '../../assets/sounds/G1.wav'
+import G1_sharp from '../../assets/sounds/G1_sharp.wav'
+import A1 from '../../assets/sounds/A1.wav'
+import A1_sharp from '../../assets/sounds/A1_sharp.wav'
+import B1 from '../../assets/sounds/B1.wav'
+import C2 from '../../assets/sounds/C2.wav'
+import C2_sharp from '../../assets/sounds/C2_sharp.wav'
+import D2 from '../../assets/sounds/D2.wav'
+import D2_sharp from '../../assets/sounds/D2_sharp.wav'
+import E2 from '../../assets/sounds/E2.wav'
+import F2 from '../../assets/sounds/F2.wav'
+import F2_sharp from '../../assets/sounds/F2_sharp.wav'
+import G2 from '../../assets/sounds/G2.wav'
+import G2_sharp from '../../assets/sounds/G2_sharp.wav'
+import A2 from '../../assets/sounds/A2.wav'
+import A2_sharp from '../../assets/sounds/A2_sharp.wav'
+import B2 from '../../assets/sounds/B2.wav'
+import C3 from '../../assets/sounds/C3.wav'
 
 const audioClips = {
   "C1": C1,

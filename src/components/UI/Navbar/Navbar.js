@@ -5,7 +5,7 @@ const Navbar = (props) => {
   return (
     <nav className={classes.Navbar}>
       This is navbar
-      <button onClick={() => props.click('yeah')}>Quiz Dashboard</button>
+      <button onClick={props.click}>Quiz Dashboard</button>
     </nav>
   )
 

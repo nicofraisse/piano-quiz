@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Piano from '../components/Piano';
+import Piano from '../../components/Piano/Piano';
 
 // const quizAnswerData = [
 //   {
@@ -12,7 +12,7 @@ import Piano from '../components/Piano';
 
 const PianoQuiz = (props) => {
   return (
-    <Piano quiz={props.quiz} />
+    <div><Piano quiz={props.quiz} /></div>
   )
 }
 

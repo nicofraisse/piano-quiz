@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const CreateQuiz = (props) => {
+const QuizCreate = (props) => {
   const [value, setValue] = useState('')
   const handleInputName = (v) =>{
     setValue(v)
@@ -24,8 +24,8 @@ const CreateQuiz = (props) => {
         placeholder="Enter quiz name..."/>
       <label htmlFor="lname">Last name:</label>
       <select
-        name="cars"
-        id="cars"
+        name="Quiz Difficulty"
+        id="quiz-difficulty"
         onChange={(e) => handleInputDifficulty(e.target.value)}>
         <option value="1">Easy</option>
         <option value="2">Medium</option>
@@ -39,4 +39,4 @@ const CreateQuiz = (props) => {
 }
 
 
-export default CreateQuiz;
+export default QuizCreate;
