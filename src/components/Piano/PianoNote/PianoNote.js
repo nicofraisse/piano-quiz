@@ -6,9 +6,9 @@ const PianoNote = (props) => {
   const specialStyle = () => {
     if (props.lastAttemptData) {
       if (props.lastAttemptData.correct && props.label === props.lastAttemptData.note) {
-        return "rgba(154, 233, 83, 1.00)"
+        return "rgba(154, 233, 83, 1.00)";
       } else if (!props.lastAttemptData.correct && props.label === props.lastAttemptData.note) {
-        return "#ff414d"
+        return "#ff414d";
       }
     }
   }
@@ -19,9 +19,8 @@ const PianoNote = (props) => {
       key={props.index}
       onClick={props.click}
       className={[classes.Note, props.label.includes('#') ? classes.BlackKey : classes.WhiteKey].join(' ')}
-      style={{backgroundColor: specialStyle()}}
-      >
-        <span>{props.label}</span>
+      style={{backgroundColor: specialStyle()}}>
+        <span>{props.labelShow ? props.label : null}</span>
       </button>
     </div>
   );

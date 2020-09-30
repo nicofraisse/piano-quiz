@@ -14,6 +14,9 @@ import classes from './Piano.module.css';
 
 
 const Piano = (props) => {
+  const [controlsShowing, setControlsShowing] = useState(false);
+  const [volume, setVolume] = useState(0.9);
+  const [labelShowing, setLabelShowing] = useState(false);
   const pressNote = (note) => {
     soundPlay(audioClips[note]);
     if (props.quiz) {
@@ -23,21 +26,44 @@ const Piano = (props) => {
     }
   }
 
-  Howler.volume(0.9) // can make component to adjust volume
+  const adjustVolume = (e) => {
+    setVolume(Number.parseInt(e.target.value) / 100)
+
+  }
+
+  Howler.volume(volume) // can make component to adjust volume
 
   return (
-    <div>
+    <div className={classes.Piano}>
+      <div className={classes.GrandPiano}>
+        {
+          Object.keys(audioClips).map((note, index) =>
+            <PianoNote
+              key={index}
+              click={() => pressNote(note)}
+              labelShow={labelShowing}
+              label={note}
+              lastAttemptData={props.attemptData ? props.attemptData[props.attemptData.length - 1] : null}
+            />
+          )
+        }
+        <span className={classes.SettingsBtn} onClick={() => setControlsShowing(!controlsShowing)}>
+          <i class="fas fa-cog"></i>
+        </span>
       {
-        Object.keys(audioClips).map((note, index) =>
-          <PianoNote
-            key={index}
-            click={() => pressNote(note)}
-            label={note}
-            lastAttemptData={props.attemptData ? props.attemptData[props.attemptData.length - 1] : null}
-
-          />
-        )
+        controlsShowing ?
+        <div className={classes.Controls}>
+          <h3>Controls</h3>
+          <div>
+            <p>Volume: {Math.round(volume * 100)}</p>
+            <input type="range" min="0" max="100" value={volume * 100} className={classes.Slider} onChange={e => adjustVolume(e)} />
+          </div>
+          <button onClick={() => {setLabelShowing(!labelShowing)}}>Toggle note labels</button>
+        </div>
+        :
+        null
       }
+      </div>
     </div>
   );
 }

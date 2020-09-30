@@ -1,0 +1,72 @@
+.Piano {
+  display: flex;
+  justify-content: center;
+
+}
+
+.GrandPiano {
+  position: relative;
+}
+
+.Controls {
+  position: absolute;
+  right: -150px;
+  bottom: 110px;
+  background-color: rgba(178, 204, 214, 1.00);
+  border-radius: 4px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 30;
+}
+
+.Controls h3 {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.Slider {
+  border-radius: 3px;
+  outline: none;
+  width: 160px;
+}
+
+.Controls p {
+  margin: 0;
+}
+
+.Controls button {
+  margin-top: 24px;
+}
+
+.Slider::webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  z-index: 3;
+  position: relative;
+}
+
+.SettingsBtn {
+  font-size: 40px;
+  color: #ccc;
+  position: absolute;
+  right: -60px;
+  top: 30%;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.SettingsBtn:hover {
+  color: #aaa;
+}
+
+
+
+
+
+
+
