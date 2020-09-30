@@ -1,0 +1,65 @@
+.QuizCard {
+  background-color: #726a95;
+  color: white;
+  padding: 16px;
+  height: 180px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.2);
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: 0.15s;
+}
+.QuizCard:hover {
+  transform: scale(1.02);
+  background-color: rgba(104, 96, 139, 1.00);
+}
+
+.QuizCard div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.QuizCard h3 {
+  margin: 0;
+}
+
+.QuizName {
+
+}
+
+.InvisibleClickable {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  cursor: pointer;
+}
+
+.Difficulty {
+  font-size: 30px;
+  background-color: rgba(255 ,255, 255, 0.1);
+  width: 130px;
+  padding: 0px 8px;
+  text-align: left;
+  border-radius: 8px;
+}
+
+.Share {
+  font-size: 30px;
+}
+
+.AddClipboardMsg {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 120px;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 16px;
+  padding: 4px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5);
+}

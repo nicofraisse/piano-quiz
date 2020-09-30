@@ -1,0 +1,67 @@
+.CreateQuiz label, .CreateQuiz input {
+  display: block;
+}
+
+.FlexLayout {
+  display: flex;
+  width: 800px;
+  margin: 0 auto;
+  margin: 30px auto;
+}
+
+.CreateQuiz form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  flex-shrink: 0;
+  font-size: 18px;
+}
+
+.CreateQuiz label {
+  margin: 8px;
+  font-weight: bold;
+}
+
+.Input {
+  padding: 6px;
+  font-size: 16px;
+}
+
+.SelectedNotes {
+  flex-grow: 1;
+  margin: 0px 20px;
+  padding: 16px;
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 10px;
+}
+
+.Buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.SubmitNotes {
+  display: inline-block;
+  padding: 6px 18px;
+  border: 2px solid #0278ae;
+  font-size: 18px;
+  border-radius: 6px;
+  color: #0278ae;
+  font-weight: bold;
+  background: none;
+  cursor: pointer;
+}
+
+.SubmitQuiz {
+  display: inline-block;
+  font-weight: bold;
+  padding: 6px 18px;
+  font-size: 18px;
+  border-radius: 6px;
+  background-color: rgba(40, 180, 133, 1.00);
+  color: white;
+  border: 2px solid rgba(40, 180, 133, 1.00);
+  cursor: pointer;
+}
+

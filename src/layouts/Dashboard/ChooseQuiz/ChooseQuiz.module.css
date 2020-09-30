@@ -1,0 +1,22 @@
+.ChooseQuiz {
+  width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 32px;
+}
+
+.CreateQuiz {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(114, 106, 149, 0.3);
+  border-radius: 10px;
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.2);
+  height: 80px;
+  color: rgba(94, 89, 129, 1.00);
+  font-size: 60px;
+  font-weight: bold;
+  height: 100%;
+  cursor: pointer;
+}

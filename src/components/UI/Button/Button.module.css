@@ -1,0 +1,44 @@
+.Button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  font-weight: bold;
+  margin: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.Primary {
+  color: #2d4059;
+  border: 2px solid #2d4059;
+}
+
+.Primary:hover,
+.Primary:active,
+.Primary:focus {
+  background: #2d4059;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+
+.Subtle {
+  border: 3px solid #ccc;
+  color: #ccc;
+}
+
+.PlayNotes {
+  background-color: rgba(146, 198, 68, 1.00);
+  color: white;
+  border: 3px solid rgba(146, 198, 68, 1.00);
+}
+
+.PlayNotes:hover,
+.Subtle:hover {
+  opacity: 0.7;
+}
+
+

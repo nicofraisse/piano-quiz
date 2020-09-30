@@ -7,6 +7,9 @@ import QuizCard from './QuizCard/QuizCard';
 // Helper functions
 import copyToClipboard from '../../../util/copyToClipboard';
 
+// Stylesheets
+import classes from './QuizCards.module.css'
+
 const QuizCards = (props) => {
   const shareQuiz = (quiz) => {
     const encodedURL = encodeURIComponent(JSON.stringify(quiz));

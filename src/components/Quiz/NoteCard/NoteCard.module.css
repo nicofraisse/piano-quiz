@@ -1,0 +1,9 @@
+.NoteCard {
+  color: white;
+  background-color: #bbb;
+  border-radius: 4px;
+  margin: 4px;
+  padding: 6px 12px;
+  display: inline-block;
+  font-size: 20px;
+}

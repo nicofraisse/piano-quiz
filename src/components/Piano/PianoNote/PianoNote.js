@@ -1,19 +1,29 @@
 import React from 'react';
+import classes from './PianoNote.module.css';
 
 const PianoNote = (props) => {
+  console.log(props.lastAttemptData)
+  const specialStyle = () => {
+    if (props.lastAttemptData) {
+      if (props.lastAttemptData.correct && props.label === props.lastAttemptData.note) {
+        return "rgba(154, 233, 83, 1.00)"
+      } else if (!props.lastAttemptData.correct && props.label === props.lastAttemptData.note) {
+        return "#ff414d"
+      }
+    }
+  }
+
   return (
-    <button
-    key={props.index}
-    onClick={props.click}
-    style={{
-      height: 100,
-      backgroundColor: props.label.includes('#') ? 'black' : 'white',
-      width: props.label.includes('#') ? '28px' : '36px',
-      color: props.label.includes('#') ? 'white' : 'black',
-      transform: props.label.includes('#') ? 'translateY(-12px)' : '',
-    }}>
-      {props.label}
-    </button>
+    <div style={{display: 'inline', position: 'relative'}}>
+      <button
+      key={props.index}
+      onClick={props.click}
+      className={[classes.Note, props.label.includes('#') ? classes.BlackKey : classes.WhiteKey].join(' ')}
+      style={{backgroundColor: specialStyle()}}
+      >
+        <span>{props.label}</span>
+      </button>
+    </div>
   );
 }
 

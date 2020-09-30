@@ -1,0 +1,33 @@
+.Note {
+  height: 144px;
+}
+
+.WhiteKey {
+  background-color: rgba(243, 239, 234, 1.00);
+  color: black;
+  width: 48px;
+  box-shadow: inset 10px -16px 10px rgba(230, 220, 215, 1.00);
+  border-radius: 0px 0px 8px 8px;
+}
+
+.BlackKey {
+  background-color: rgba(24, 23, 27, 1.00);
+  border-radius: 0px 0px 5px 5px;
+  color: white;
+  width: 24px;
+  position: absolute;
+  z-index: 10;
+  height: 90px;
+  left: -12px;
+}
+
+.Note button {
+  position: relative;
+}
+
+.Note span {
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  font-size: 12px;
+}

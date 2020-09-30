@@ -7,6 +7,8 @@ import loadDatabase from './data/loadDatabase';
 // Layouts
 import Game from './layouts/Game/Game';
 import Dashboard from './layouts/Dashboard/Dashboard';
+import LandingPage from './layouts/LandingPage/LandingPage';
+import Freeplay from './layouts/Freeplay/Freeplay';
 
 // Components
 import Navbar from './components/UI/Navbar/Navbar';
@@ -16,6 +18,7 @@ import './App.css';
 
 const App = () => {
   const [ dashboardShowing, setDashboardShowing ] = useState(false);
+  const [ freeplayShowing, setFreeplayShowing ] = useState(false);
   const [ createQuizShowing, setCreateQuizShowing ] = useState(false);
   const [ activeQuiz, setActiveQuiz ] = useState(null);
   const [ database, setDatabase ] = useState(null);
@@ -47,10 +50,44 @@ const App = () => {
     setCreateQuizShowing(!createQuizShowing);
   }
 
+  const showDashboard = () => {
+    setDashboardShowing(true)
+    setFreeplayShowing(false)
+    setActiveQuiz(null)
+  }
+
+  const showFreeplay = () => {
+    setDashboardShowing(false)
+    setFreeplayShowing(true)
+    setActiveQuiz(null)
+  }
+
+  const showLandingPage = () => {
+    setDashboardShowing(false)
+    setFreeplayShowing(false)
+    setActiveQuiz(null)
+  }
+
+  useEffect(() => {
+    console.log(dashboardShowing)
+  })
+
   return (
     <div className="App">
-      <Navbar click={() => setDashboardShowing(!dashboardShowing)}/>
-      <h1>Welcome to piano quiz</h1>
+      <Navbar
+      toggleDashboard={showDashboard}
+      toggleFreeplay={showFreeplay}
+      logoClick={showLandingPage}
+      />
+
+      {
+        (!freeplayShowing) && (!dashboardShowing) && (!activeQuiz) ?
+        <LandingPage click={showDashboard} /> : null
+      }
+
+      {
+        freeplayShowing ? <Freeplay /> : null
+      }
 
       {
         dashboardShowing ?

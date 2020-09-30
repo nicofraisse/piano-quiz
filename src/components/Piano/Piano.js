@@ -1,5 +1,5 @@
 // Libraries
-import React from 'react';
+import React, { useState } from 'react';
 import { Howler } from 'howler';
 
 // Utility functions
@@ -9,7 +9,8 @@ import soundPlay from '../../util/soundPlay';
 import PianoNote from './PianoNote/PianoNote';
 
 // Data
-import audioClips from '../../data/audioClips'
+import audioClips from '../../data/audioClips';
+import classes from './Piano.module.css';
 
 
 const Piano = (props) => {
@@ -32,6 +33,8 @@ const Piano = (props) => {
             key={index}
             click={() => pressNote(note)}
             label={note}
+            lastAttemptData={props.attemptData ? props.attemptData[props.attemptData.length - 1] : null}
+
           />
         )
       }

@@ -1,6 +1,11 @@
 .Dashboard {
-  position: abodlute;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgb(0, 0, 0, 0.1);
+  background-color: rgb(100, 30, 70, 0.03);
+  padding-top: 32px;
+  padding-bottom: 64px;
+}
+
+.Back {
+  font-size: 40px;
+  margin: 40px;
+
 }

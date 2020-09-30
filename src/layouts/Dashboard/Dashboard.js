@@ -10,17 +10,22 @@ const Dashboard = (props) => {
       {
         props.showCreateQuiz
         ?
-        <CreateQuiz
-          click={props.submitQuiz}
-          currentQuizzes={props.quizData}
-          handleSubmit={props.switchTab}/>
+        <div>
+          <CreateQuiz
+            click={props.submitQuiz}
+            currentQuizzes={props.quizData}
+            handleSubmit={props.switchTab}/>
+          <div className={classes.Back} onClick={props.switchTab}><i class="fas fa-backspace"></i></div>
+        </div>
         :
-        <ChooseQuiz
-          quizzes={props.quizData}
-          clickOnQuiz={props.selectQuiz}
-          createQuiz={props.switchTab} />
+        <div>
+          <h1 style={{marginBottom: 36}}>Which quiz would you like to play?</h1>
+          <ChooseQuiz
+            quizzes={props.quizData}
+            clickOnQuiz={props.selectQuiz}
+            createQuiz={props.switchTab} />
+          </div>
       }
-      <div onClick={props.switchTab}>Back</div>
     </div>
   );
 }

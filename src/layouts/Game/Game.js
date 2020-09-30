@@ -8,9 +8,13 @@ import sleepAsync from '../../util/sleepAsync';
 // Components
 import Piano from '../../components/Piano/Piano';
 import FinalScore from '../../components/Quiz/FinalScore/FinalScore';
+import Button from '../../components/UI/Button/Button';
 
 // Data
 import audioClips from '../../data/audioClips';
+
+// Stylesheets
+import classes from './Game.module.css';
 
 
 const Game = (props) => {
@@ -21,8 +25,6 @@ const Game = (props) => {
   const [ currentSubquizNoteIndex, setCurrentSubquizNoteIndex ] = useState(0);
 
   const noteAttempt = (note) => {
-    console.log(props.quiz)
-
     // visualFeedback(note);
     setSubquizAttemptData([
       ...subquizAttemptData,
@@ -43,37 +45,41 @@ const Game = (props) => {
     if (note === props.quiz.quizzes[currentSubquizIndex][currentSubquizNoteIndex] &&
         currentSubquizNoteIndex === props.quiz.quizzes[currentSubquizIndex].length - 1 &&
         currentSubquizIndex !== props.quiz.quizzes.length - 1) {
-      setCurrentSubquizIndex(currentSubquizIndex + 1);
-      setQuizAttemptData(prev => [
-        ...prev,
-        [
-          ...subquizAttemptData,
-          {
-            note: note,
-            correct: note === props.quiz.quizzes[currentSubquizIndex][currentSubquizNoteIndex],
-            timestamp: new Date()
-          }
-        ]
-      ])
-      setCurrentSubquizNoteIndex(0);
+      setTimeout(() => {
+        setCurrentSubquizIndex(currentSubquizIndex + 1);
+        setQuizAttemptData(prev => [
+          ...prev,
+          [
+            ...subquizAttemptData,
+            {
+              note: note,
+              correct: note === props.quiz.quizzes[currentSubquizIndex][currentSubquizNoteIndex],
+              timestamp: new Date()
+            }
+          ]
+        ])
+        setCurrentSubquizNoteIndex(0);
+      }, 1000)
     }
 
     // Manage end of the game
     if (note === props.quiz.quizzes[currentSubquizIndex][currentSubquizNoteIndex] &&
         currentSubquizNoteIndex === props.quiz.quizzes[currentSubquizIndex].length - 1 &&
         currentSubquizIndex === props.quiz.quizzes.length - 1) {
-      setQuizAttemptData(prev => [
-        ...prev,
-        [
-          ...subquizAttemptData,
-          {
-            note: note,
-            correct: note === props.quiz.quizzes[currentSubquizIndex][currentSubquizNoteIndex],
-            timestamp: new Date()
-          }
-        ]
-      ])
-      endGame();
+      setTimeout(() => {
+        setQuizAttemptData(prev => [
+          ...prev,
+          [
+            ...subquizAttemptData,
+            {
+              note: note,
+              correct: note === props.quiz.quizzes[currentSubquizIndex][currentSubquizNoteIndex],
+              timestamp: new Date()
+            }
+          ]
+        ])
+        endGame();
+      }, 1000)
     }
   }
 
@@ -106,17 +112,27 @@ const Game = (props) => {
 
 
   return (
-    <div>
-      <button onClick={startGame}>Restart game</button>
-      <button onClick={playNotes}>Play notes</button>
-      <h2>Round {currentSubquizIndex + 1}/{props.quiz.quizzes.length}</h2>
+    <div className={classes.Game}>
+
+      <h1>{props.quiz.name}</h1>
+      <h2 className={classes.SubtleText}>Round <strong>{currentSubquizIndex + 1}</strong> of {props.quiz.quizzes.length}</h2>
+
+      <div className={classes.Buttons}>
+        <Button click={playNotes} text={[<i class="fas fa-play"></i>, "Play"]} btnType="PlayNotes" />
+        <Button click={startGame} text={[<i class='fas fa-redo-alt'></i>, "Restart game"]} btnType="Subtle"/>
+      </div>
       <Piano
         notes={audioClips}
         sendNoteToGame={noteAttempt}
         quiz={props.quiz}
+        attemptData={subquizAttemptData}
+        noteIndex={currentSubquizNoteIndex}
         />
       {
-        gameFinished ? <FinalScore attemptData={quizAttemptData}/>
+        gameFinished ?
+        <FinalScore
+          attemptData={quizAttemptData}
+          click={() => setGameFinished(false)}/>
         :
         null
       }

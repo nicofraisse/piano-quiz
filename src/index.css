@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400&family=PT+Serif:wght@400;700&family=Rubik:wght@300;400;500;600;700;800&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.0.10/css/all.css');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -18,4 +19,19 @@ h1 {
 
 h2 {
   margin: 40px;
+}
+
+* {
+  /*font-family: 'PT Serif', serif;*/
+  font-family: 'Open Sans', sans-serif;
+  color: rgb(30 35, 40);
+}
+
+.fa-redo-alt, .fa-play {
+  margin-right: 10px;
+}
+
+.fa-share:hover {
+  color: pink;
+  cursor: pointer;
 }
