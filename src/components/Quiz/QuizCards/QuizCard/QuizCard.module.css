@@ -2,7 +2,7 @@
   background-color: #726a95;
   color: white;
   padding: 16px;
-  height: 180px;
+  height: 160px;
   border-radius: 10px;
   box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.2);
   font-size: 20px;
@@ -24,10 +24,6 @@
 
 .QuizCard h3 {
   margin: 0;
-}
-
-.QuizName {
-
 }
 
 .InvisibleClickable {

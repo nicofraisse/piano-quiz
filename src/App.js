@@ -31,8 +31,6 @@ const App = () => {
 
   useEffect(() => {
     if (window.location.pathname[1] === "S") {
-      console.log(decodeURIComponent(window.location.pathname.slice(2)))
-      console.log(window.location.pathname)
       setActiveQuiz(JSON.parse(decodeURIComponent(window.location.pathname.slice(2))));
     }
   }, []);
@@ -67,10 +65,6 @@ const App = () => {
     setFreeplayShowing(false)
     setActiveQuiz(null)
   }
-
-  useEffect(() => {
-    console.log(dashboardShowing)
-  })
 
   return (
     <div className="App">

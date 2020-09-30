@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './PianoNote.module.css';
 
 const PianoNote = (props) => {
-  console.log(props.lastAttemptData)
   const specialStyle = () => {
     if (props.lastAttemptData) {
       if (props.lastAttemptData.correct && props.label === props.lastAttemptData.note) {

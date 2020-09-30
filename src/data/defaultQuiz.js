@@ -1,6 +1,15 @@
 const defaultQuiz = [
   {
-    name: "Easy quiz to get started",
+    name: "Warmup quiz with just 1 note per round",
+    difficulty: 1,
+    quizzes: [
+      ["C2"],
+      ["A1"],
+      ["E2"]
+    ]
+  },
+  {
+    name: "Beginner quiz, white keys only",
     difficulty: 1,
     quizzes: [
       ["C1", "D1", "E1"],
@@ -8,11 +17,11 @@ const defaultQuiz = [
     ]
   },
   {
-    name: "A bit more difficult",
+    name: "Quite bizarre melodies",
     difficulty: 2,
     quizzes: [
       ["F#2", "F#1", "A2"],
-      ["A1", "D2", "G1", "C3"],
+      ["A1", "D2", "C3"],
       ["A#2", "C#1", "C2", "E1"]
     ]
   },
@@ -21,7 +30,7 @@ const defaultQuiz = [
     difficulty: 4,
     quizzes: [
       ["F#2", "F#1", "A2"],
-      ["D1", "C2", "E1", "B1", "F#1"],
+      ["D1", "C2", "E1", "F#1"],
       ["D1", "C#1", "E1", "F#1", "F#1"],
     ]
   }

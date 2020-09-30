@@ -39,7 +39,6 @@ const Game = (props) => {
     if (note === props.quiz.quizzes[currentSubquizIndex][currentSubquizNoteIndex]) {
       setCurrentSubquizNoteIndex(currentSubquizNoteIndex + 1);
     }
-    // console.log(currentSubquizIndex, props.quiz.quizzes.length);
 
     // Go to the next subquiz when the user finishes the subquiz
     if (note === props.quiz.quizzes[currentSubquizIndex][currentSubquizNoteIndex] &&
@@ -116,7 +115,7 @@ const Game = (props) => {
 
       <h1>{props.quiz.name}</h1>
       <h2 className={classes.SubtleText}>Round <strong>{currentSubquizIndex + 1}</strong> of {props.quiz.quizzes.length}</h2>
-
+      <p>Instructions: press "Play" and listen to the notes being played. Then, try to reproduce them in the right order by clicking on the piano notes. When the note flashes green, it is correct! The final score will be shown once you've finished all of the rounds.</p>
       <div className={classes.Buttons}>
         <Button click={playNotes} text={[<i class="fas fa-play"></i>, "Play"]} btnType="PlayNotes" />
         <Button click={startGame} text={[<i class='fas fa-redo-alt'></i>, "Restart game"]} btnType="Subtle"/>
@@ -136,7 +135,6 @@ const Game = (props) => {
         :
         null
       }
-
     </div>
   );
 }

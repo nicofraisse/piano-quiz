@@ -22,7 +22,7 @@ const Piano = (props) => {
     if (props.quiz) {
       props.sendNoteToGame(note);
     } else if (props.form) {
-      props.sendNoteToForm(note)
+      props.sendNoteToForm(note);
     }
   }
 

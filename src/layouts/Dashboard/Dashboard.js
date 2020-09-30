@@ -15,7 +15,7 @@ const Dashboard = (props) => {
             click={props.submitQuiz}
             currentQuizzes={props.quizData}
             handleSubmit={props.switchTab}/>
-          <div className={classes.Back} onClick={props.switchTab}><i class="fas fa-backspace"></i></div>
+          <div className={classes.Back} onClick={props.switchTab}><i class="far fa-times-circle"></i> cancel</div>
         </div>
         :
         <div>
@@ -24,7 +24,7 @@ const Dashboard = (props) => {
             quizzes={props.quizData}
             clickOnQuiz={props.selectQuiz}
             createQuiz={props.switchTab} />
-          </div>
+        </div>
       }
     </div>
   );

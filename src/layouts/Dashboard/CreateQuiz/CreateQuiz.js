@@ -77,7 +77,6 @@ const QuizCreate = (props) => {
 
   useEffect(() => {
     setSelectedSubquizNotes([]);
-    console.log(selectedQuizzes);
   }, [selectedQuizzes])
 
 
@@ -88,16 +87,8 @@ const QuizCreate = (props) => {
     })
   }, [selectedSubquizNotes])
 
-  useEffect(() => {
-    // console.log('inputdata', inputData)
-
-
-  })
-
-
-  let oldNoteCards = null
+  let oldNoteCards = null;
   if (inputData.quizzes) {
-
     oldNoteCards = inputData.quizzes.map((quiz, setIndex) => {
       return quiz.map((selectedNote, i) => {
           return (
@@ -160,7 +151,6 @@ const QuizCreate = (props) => {
       </div>
 
       <Piano form sendNoteToForm={addNote}/>
-
     </div>
   );
 }

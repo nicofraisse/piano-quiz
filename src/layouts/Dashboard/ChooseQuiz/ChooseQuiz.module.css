@@ -17,6 +17,7 @@
   color: rgba(94, 89, 129, 1.00);
   font-size: 60px;
   font-weight: bold;
-  height: 100%;
+  min-height: 100%;
   cursor: pointer;
+  height: 160px;
 }

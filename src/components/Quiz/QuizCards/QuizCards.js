@@ -8,13 +8,12 @@ import QuizCard from './QuizCard/QuizCard';
 import copyToClipboard from '../../../util/copyToClipboard';
 
 // Stylesheets
-import classes from './QuizCards.module.css'
+import classes from './QuizCards.module.css';
 
 const QuizCards = (props) => {
   const shareQuiz = (quiz) => {
     const encodedURL = encodeURIComponent(JSON.stringify(quiz));
     const encodedQuizURL = window.location.origin + "/S" + encodedURL;
-    console.log(quiz)
     copyToClipboard(encodedQuizURL);
   }
   return props.quizzes.map((quiz, index) => {

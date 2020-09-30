@@ -2,10 +2,19 @@
   background-color: rgb(100, 30, 70, 0.03);
   padding-top: 32px;
   padding-bottom: 64px;
+  min-height: 100vh;
 }
 
 .Back {
-  font-size: 40px;
+  font-size: 28px;
   margin: 40px;
+  vertical-align: middle;
+  color: #aaa;
+  cursor: pointer;
+  transition: 0.1s;
+}
 
+.Back:hover {
+
+  color: #666;
 }
