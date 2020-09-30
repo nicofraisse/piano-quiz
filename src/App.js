@@ -22,15 +22,17 @@ const App = () => {
 
   useEffect(() => {
     (async () => {
-      setDatabase(await loadDatabase())
+      setDatabase(await loadDatabase());
     })()
-  }, [createQuizShowing])
+  }, [createQuizShowing]);
 
   useEffect(() => {
     if (window.location.pathname[1] === "S") {
-      setActiveQuiz(JSON.parse(decodeURIComponent(window.location.pathname.slice(2))))
+      console.log(decodeURIComponent(window.location.pathname.slice(2)))
+      console.log(window.location.pathname)
+      setActiveQuiz(JSON.parse(decodeURIComponent(window.location.pathname.slice(2))));
     }
-  }, [])
+  }, []);
 
   const startQuiz = (quiz) => {
     setDashboardShowing(false);
@@ -42,7 +44,7 @@ const App = () => {
   }
 
   const switchTab = () => {
-    setCreateQuizShowing(!createQuizShowing)
+    setCreateQuizShowing(!createQuizShowing);
   }
 
   return (
