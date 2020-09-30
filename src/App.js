@@ -22,9 +22,14 @@ const App = () => {
 
   useEffect(() => {
     (async () => {
-      console.log(await loadDatabase())
       setDatabase(await loadDatabase())
     })()
+  }, [createQuizShowing])
+
+  useEffect(() => {
+    if (window.location.pathname[1] === "S") {
+      setActiveQuiz(JSON.parse(decodeURIComponent(window.location.pathname.slice(2))))
+    }
   }, [])
 
   const startQuiz = (quiz) => {
@@ -34,6 +39,10 @@ const App = () => {
 
   const handleQuizSubmit = (event) => {
     event.preventDefault();
+  }
+
+  const switchTab = () => {
+    setCreateQuizShowing(!createQuizShowing)
   }
 
   return (
@@ -46,7 +55,7 @@ const App = () => {
         <Dashboard
           quizData={database}
           showCreateQuiz={createQuizShowing}
-          click={() => setCreateQuizShowing(!createQuizShowing)}
+          switchTab={switchTab}
           selectQuiz={quiz => startQuiz(quiz)}
           submitQuiz={(event) => handleQuizSubmit(event)} /> : null
       }

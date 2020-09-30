@@ -69,7 +69,9 @@ const QuizCreate = (props) => {
       const store = await tx.objectStore('store1')
       await store.put(finalQuizData, props.currentQuizzes.length)
       await tx.done
+      await setTimeout(() => props.handleSubmit(), 300)
     })();
+
   }
 
   useEffect(() => {
