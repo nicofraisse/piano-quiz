@@ -1,6 +1,6 @@
 const defaultQuiz = [
   {
-    name: "Easy quiz",
+    name: "Easy quiz to get started",
     difficulty: 1,
     quizzes: [
       ["C1", "D1", "E1"],
@@ -8,20 +8,21 @@ const defaultQuiz = [
     ]
   },
   {
-    name: "Quite nice quiz",
-    difficulty: 4,
+    name: "A bit more difficult",
+    difficulty: 2,
     quizzes: [
-      ["A1", "D2", "G1", "C3"],
       ["F#2", "F#1", "A2"],
-      ["A#2", "C#1"]
+      ["A1", "D2", "G1", "C3"],
+      ["A#2", "C#1", "C2", "E1"]
     ]
   },
   {
-    name: "Cool quiz that is fun",
-    difficulty: 2,
+    name: "Your ears will likely suffer",
+    difficulty: 4,
     quizzes: [
-      ["D1", "C2", "E1", "C3", "B1", "F#1"],
-      ["C#1"]
+      ["F#2", "F#1", "A2"],
+      ["D1", "C2", "E1", "B1", "F#1"],
+      ["D1", "C#1", "E1", "F#1", "F#1"],
     ]
   }
 ];
