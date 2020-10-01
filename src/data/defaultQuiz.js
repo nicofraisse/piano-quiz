@@ -20,18 +20,18 @@ const defaultQuiz = [
     name: "Quite bizarre melodies",
     difficulty: 2,
     quizzes: [
-      ["F#2", "F#1", "A2"],
-      ["A1", "D2", "C3"],
-      ["A#2", "C#1", "C2", "E1"]
+      ["F#2", "F#1"],
+      ["D1", "D#1", "E1"],
+      ["G2", "E2", "C#2"]
     ]
   },
   {
     name: "Your ears will likely suffer",
     difficulty: 4,
     quizzes: [
-      ["F#2", "F#1", "A2"],
+      ["F#2", "A1", "A#2"],
       ["D1", "C2", "E1", "F#1"],
-      ["D1", "C#1", "E1", "F#1", "F#1"],
+      ["C#1", "E2", "F#2", "G#1"],
     ]
   }
 ];
