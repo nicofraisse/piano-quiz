@@ -4,7 +4,10 @@ Test your perfect/relative pitch! Play the existing games, or create your own aw
 
 ## Todo
 
-- [ ] Mobile responsiveness
+- [X] Mobile responsiveness
 - [ ] Form validations
 - [ ] Landing page is a pop-up on the homepage
 - [ ] Prevent from spamming play
+
+## 👉 https://piano-quiz-39c0d.web.app/
+
