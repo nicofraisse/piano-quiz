@@ -18,6 +18,7 @@ import classes from './Game.module.css';
 
 
 const Game = (props) => {
+  const [ controlsShowing, setControlsShowing ] = useState(false);
   const [ gameFinished, setGameFinished ] = useState(false);
   const [ quizAttemptData, setQuizAttemptData ] = useState([])
   const [ subquizAttemptData, setSubquizAttemptData ] = useState([]);
@@ -119,8 +120,12 @@ const Game = (props) => {
       <div className={classes.Buttons}>
         <Button click={playNotes} text={[<i class="fas fa-play"></i>, "Play"]} btnType="PlayNotes" />
         <Button click={startGame} text={[<i class='fas fa-redo-alt'></i>, "Restart game"]} btnType="Subtle"/>
+        <span className={classes.SettingsBtn} onClick={() => setControlsShowing(!controlsShowing)}>
+          <i class="fas fa-cog"></i>
+        </span>
       </div>
       <Piano
+        showControls={controlsShowing}
         notes={audioClips}
         sendNoteToGame={noteAttempt}
         quiz={props.quiz}
