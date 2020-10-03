@@ -21,10 +21,16 @@
   font-weight: bold;
   cursor: pointer;
   color: white;
+  transition: 0.1s;
 }
 
+.LandingPage > div > div:hover {
+  background-color: rgba(140, 218, 92, 1.00);
+}
+
+
 .LandingPage > div {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 40px 30px;
   border-radius: 3px;
   border: 10px solid rgb(240, 240, 230);
