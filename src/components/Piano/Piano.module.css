@@ -6,12 +6,13 @@
 
 .GrandPiano {
   position: relative;
+  display: flex;
 }
 
 .Controls {
   position: absolute;
-  right: -150px;
-  bottom: 110px;
+  top: 48px;
+  left: -92px;
   background-color: rgba(178, 204, 214, 1.00);
   border-radius: 4px;
   padding: 30px;
@@ -22,23 +23,38 @@
   z-index: 30;
 }
 
-.Controls h3 {
+
+.Controls h3, .QuizControls h3 {
   margin: 0;
   margin-bottom: 20px;
+}
+
+.Controls p, .QuizControls p  {
+  margin: 0;
+}
+
+.Controls button, .QuizControls button {
+  margin-top: 24px;
+}
+
+.QuizControls {
+  position: absolute;
+  top: -48px;
+  right:0px;
+  background-color: rgba(178, 204, 214, 1.00);
+  border-radius: 4px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 30;
 }
 
 .Slider {
   border-radius: 3px;
   outline: none;
   width: 160px;
-}
-
-.Controls p {
-  margin: 0;
-}
-
-.Controls button {
-  margin-top: 24px;
 }
 
 .Slider::webkit-slider-thumb {
@@ -51,21 +67,106 @@
 }
 
 .SettingsBtn {
+  position: relative;
+}
+
+.SettingsBtn i {
   font-size: 40px;
   color: #ccc;
-  position: absolute;
-  right: -60px;
-  top: 30%;
   cursor: pointer;
   transition: 0.15s;
 }
 
-.SettingsBtn:hover {
+.SettingsBtn i:hover {
   color: #aaa;
 }
 
+.MobileOnly {
+  display: none;
+}
+.DesktopOnly {
+  display: block;
+}
+
+@media (max-width: 780px) {
+  .MobileOnly {
+    display: block;
+  }
+  .DesktopOnly {
+    display: none;
+  }
+  .Piano {
+    flex-direction: column;
+  }
+  .GrandPiano {
+    overflow-x: scroll;
+    width: calc(100vw - 132px);
+    left: 0;
+    bottom: 0;
+    padding: 0;
+  }
+
+  .FreePlayPiano {
+    align-items: center;
+  }
+  .FreePlayPiano .GrandPiano {
+    width: inset;
+    overflow-x: auto;
+  }
+
+  .MobileOffset {
+    min-width: 300px;
+  }
+  .SettingsBtn i {
+    font-size: 40px;
+    color: #ccc;
+    position: static;
+    right: -60px;
+    top: 30%;
+    cursor: pointer;
+    transition: 0.15s;
+    margin-bottom: 10px;
+  }
+  .Controls {
+    position: static;
+  }
+}
 
 
+@media (max-width: 480px) {
+  .MobileOnly {
+    display: block;
+  }
+  .DesktopOnly {
+    display: none;
+  }
+  .Piano {
+    flex-direction: column;
+  }
+  .GrandPiano {
+    overflow-x: scroll;
+    width: calc(100vw - 32px);
+    left: 0;
+    bottom: 0;
+    padding: 0;
+  }
+  .MobileOffset {
+    min-width: 300px;
+  }
+  .SettingsBtn i {
+    font-size: 40px;
+    color: #ccc;
+    position: static;
+    right: -60px;
+    top: 30%;
+    cursor: pointer;
+    transition: 0.15s;
+    margin-bottom: 10px;
+  }
+  .Controls {
+    position: static;
+  }
+}
 
 
 

@@ -4,7 +4,7 @@
   padding: 16px;
   height: 160px;
   border-radius: 10px;
-  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.3);
   font-size: 20px;
   display: flex;
   flex-direction: column;
@@ -59,3 +59,49 @@
   border-radius: 4px;
   box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5);
 }
+
+
+@media (max-width: 860px) {
+  .QuizCard {
+    padding: 12px;
+    height: 144px;
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
+    font-size: 18px;
+  }
+
+  .InvisibleClickable {
+    height: 65%;
+  }
+
+  .Difficulty {
+    font-size: 28px;
+    width: 120px;
+    padding: 0px 6px;
+  }
+
+  .Share {
+    font-size: 28px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .QuizCard {
+    padding: 12px;
+    height: 120px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+    font-size: 16px;
+  }
+
+  .Difficulty {
+    font-size: 24px;
+    width: 100px;
+    padding: 0px 4px;
+  }
+
+  .Share {
+    font-size: 24px;
+  }
+}
+
+

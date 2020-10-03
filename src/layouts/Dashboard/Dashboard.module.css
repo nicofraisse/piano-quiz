@@ -18,3 +18,16 @@
 
   color: #666;
 }
+
+.Dashboard h1 {
+  margin-bottom: 36px;
+}
+
+@media (max-width: 720px) {
+  .Dashboard h1 {
+    margin-top: 10px;
+    margin-bottom: 16px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}

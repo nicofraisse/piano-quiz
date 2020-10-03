@@ -7,3 +7,22 @@
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
 }
 
+.Logo {
+  font-size: 56px;
+  cursor: 'pointer'
+}
+
+@media (max-width: 720px) {
+  .Navbar {
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Navbar {
+    padding: 8px 12px;
+  }
+  .Logo {
+    font-size: 48px;
+  }
+}

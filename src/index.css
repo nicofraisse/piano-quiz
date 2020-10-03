@@ -13,10 +13,6 @@ code {
     monospace;
 }
 
-h1 {
-
-}
-
 h2 {
   margin: 40px;
 }
@@ -35,3 +31,17 @@ h2 {
   color: pink;
   cursor: pointer;
 }
+
+@media (max-width: 720px) {
+  h1 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  p {
+    font-size: 15px;
+  }
+}
+
+

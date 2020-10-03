@@ -1,5 +1,6 @@
 .Game {
-  width: 860px;
+  width: 932px;
+  box-sizing: border-box;
   margin: 0 auto;
   padding: 10px;
   margin-top: 50px;
@@ -8,7 +9,21 @@
   padding: 48px;
   box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.2);
 }
+.SettingsBtn {
+  position: relative;
+}
 
+.SettingsBtn i {
+  font-size: 40px;
+  color: #ccc;
+  cursor: pointer;
+  transition: 0.15s;
+  margin-left: 10px;
+}
+
+.SettingsBtn i:hover {
+  color: #aaa;
+}
 .FlexLayout {
   display: flex;
   align-items: center;
@@ -17,6 +32,9 @@
 
 .Buttons {
   margin: 30px auto 50px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .Game h1 {
@@ -26,4 +44,27 @@
 .SubtleText {
   color: rgba(204, 204, 204, 1.00);
   margin: 10px;
+}
+
+@media (max-width: 960px) {
+  .Game {
+    width: calc(100vw - 40px);
+  }
+}
+
+@media (max-width: 720px) {
+  .Game {
+    padding: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Game {
+    width: calc(100vw - 16px);
+    padding: 24px 8px;
+    position: relative;
+  }
+  .Game h1 {
+
+  }
 }
