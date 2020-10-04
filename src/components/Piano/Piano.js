@@ -1,6 +1,6 @@
 // Libraries
 import React, { useState, useEffect } from 'react';
-import { Howler } from 'howler';
+import { Howler, Howl } from 'howler';
 
 // Utility functions
 import soundPlay from '../../util/soundPlay';
@@ -17,8 +17,20 @@ const Piano = (props) => {
   const [controlsShowing, setControlsShowing] = useState(true);
   const [volume, setVolume] = useState(0.9);
   const [labelShowing, setLabelShowing] = useState(false);
+
+  const howlSounds = {}
+  useEffect(() => {
+    if (Object.keys(howlSounds).length === 0 && howlSounds.constructor === Object) {
+      Object.keys(audioClips).forEach((note) => {
+        const src = audioClips[note]
+        howlSounds[note] = new Howl({ src });
+        console.log(note)
+      })
+    }
+  })
+
   const pressNote = (note) => {
-    soundPlay(audioClips[note]);
+    howlSounds[note].play();
     if (props.quiz) {
       props.sendNoteToGame(note);
     } else if (props.form) {
