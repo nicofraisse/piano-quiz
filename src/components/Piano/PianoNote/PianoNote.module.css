@@ -31,3 +31,37 @@
   left: 0;
   font-size: 12px;
 }
+
+.WhiteKey span {
+  left: 14px;
+  font-size: 16px;
+}
+
+@media (max-width: 680px) {
+  .Note {
+    height: 144px;
+  }
+
+  .WhiteKey {
+    width: 40px;
+  }
+
+  .BlackKey {
+    color: white;
+    width: 24px;
+    height: 90px;
+    left: -12px;
+  }
+
+  .Note span {
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    font-size: 12px;
+  }
+
+  .WhiteKey span {
+    left: 10px;
+    font-size: 15px;
+  }
+}

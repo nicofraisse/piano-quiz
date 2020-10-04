@@ -1,4 +1,5 @@
 .ChooseQuiz {
+  box-sizing: border-box;
   width: 800px;
   margin: 0 auto;
   display: grid;
@@ -13,7 +14,6 @@
   background-color: rgba(114, 106, 149, 0.3);
   border-radius: 10px;
   box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.2);
-  height: 80px;
   color: rgba(94, 89, 129, 1.00);
   font-size: 60px;
   font-weight: bold;
@@ -21,3 +21,46 @@
   cursor: pointer;
   height: 160px;
 }
+
+@media (max-width: 860px) {
+  .ChooseQuiz {
+    width: 680px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 28px;
+  }
+}
+
+@media (max-width: 720px) {
+  .ChooseQuiz {
+    width: 480px;
+    grid-template-columns: 1fr 1fr;
+    padding: 16px;
+    grid-gap: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ChooseQuiz {
+    width: 100vw;
+    padding: 12px;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 12px;
+  }
+  .CreateQuiz {
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+    font-size: 54px;
+    height: 120px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
