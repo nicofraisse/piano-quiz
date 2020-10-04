@@ -1,8 +1,10 @@
 // Libraries
 import React, { useState, useEffect } from 'react';
+import { Howl } from 'howler';
 
 // Data
 import loadDatabase from './data/loadDatabase';
+import audioClips from './data/audioClips';
 
 // Layouts
 import Game from './layouts/Game/Game';
@@ -22,6 +24,11 @@ const App = () => {
   const [ createQuizShowing, setCreateQuizShowing ] = useState(false);
   const [ activeQuiz, setActiveQuiz ] = useState(null);
   const [ database, setDatabase ] = useState(null);
+
+  Object.keys(audioClips).forEach((note) => {
+    const noteSrc = audioClips[note]
+    const sound = new Howl({ src: [noteSrc] });
+  })
 
   useEffect(() => {
     (async () => {
