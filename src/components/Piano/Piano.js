@@ -14,7 +14,7 @@ import classes from './Piano.module.css';
 
 
 const Piano = (props) => {
-  const [controlsShowing, setControlsShowing] = useState(false);
+  const [controlsShowing, setControlsShowing] = useState(true);
   const [volume, setVolume] = useState(0.9);
   const [labelShowing, setLabelShowing] = useState(false);
 
@@ -37,6 +37,51 @@ const Piano = (props) => {
       props.sendNoteToForm(note);
     }
   }
+  let controlGear = null;
+  if (!props.quiz) {
+    controlGear = (
+      <span
+        className={classes.SettingsBtn}
+        style={{marginTop: 24, display: 'inline-block'}}
+        onClick={() => setControlsShowing(!controlsShowing)}>
+        <i class="fas fa-cog"></i>
+        {
+          (controlsShowing) ?
+          <div className={classes.Controls}>
+            <h3>Controls</h3>
+            <div>
+              <p>Volume: {Math.round(volume * 100)}</p>
+              <input type="range" min="0" max="100" value={volume * 100} className={classes.Slider} onChange={e => adjustVolume(e)} />
+            </div>
+            <button onClick={() => {setLabelShowing(!labelShowing)}}>Toggle note labels</button>
+          </div>
+          :
+          null
+        }
+      </span>
+    )
+  }
+  let quizControls = null;
+  if (props.quiz) {
+    quizControls = (
+      (controlsShowing) ?
+      <div className={classes.QuizControls}>
+        <h3>Controls</h3>
+        <div>
+          <p>Volume: {Math.round(volume * 100)}</p>
+          <input type="range" min="0" max="100" value={volume * 100} className={classes.Slider} onChange={e => adjustVolume(e)} />
+        </div>
+        <button onClick={() => {setLabelShowing(!labelShowing)}}>Toggle note labels</button>
+      </div>
+      :
+      null
+    );
+  }
+
+
+  useEffect(() => {
+    setControlsShowing(!controlsShowing)
+  }, [props.showControls])
 
   const adjustVolume = (e) => {
     setVolume(Number.parseInt(e.target.value) / 100)
@@ -45,36 +90,25 @@ const Piano = (props) => {
   Howler.volume(volume) // can make component to adjust volume
 
   return (
-    <div className={classes.Piano}>
-      <div className={classes.GrandPiano}>
-        {
-          Object.keys(audioClips).map((note, index) =>
-            <PianoNote
-              key={index}
-              click={() => pressNote(note)}
-              labelShow={labelShowing}
-              label={note}
-              lastAttemptData={props.attemptData ? props.attemptData[props.attemptData.length - 1] : null}
-            />
-          )
-        }
-        <span className={classes.SettingsBtn} onClick={() => setControlsShowing(!controlsShowing)}>
-          <i class="fas fa-cog"></i>
-        </span>
-      {
-        controlsShowing ?
-        <div className={classes.Controls}>
-          <h3>Controls</h3>
-          <div>
-            <p>Volume: {Math.round(volume * 100)}</p>
-            <input type="range" min="0" max="100" value={volume * 100} className={classes.Slider} onChange={e => adjustVolume(e)} />
-          </div>
-          <button onClick={() => {setLabelShowing(!labelShowing)}}>Toggle note labels</button>
+    <div style={{position: 'relative'}}>
+      <div className={[classes.Piano, props.quiz ? '' : classes.FreePlayPiano].join(' ')}>
+        <div className={classes.GrandPiano}>
+          {
+            Object.keys(audioClips).map((note, index) =>
+              <PianoNote
+                key={index}
+                click={() => pressNote(note)}
+                labelShow={labelShowing}
+                label={note}
+                lastAttemptData={props.attemptData ? props.attemptData[props.attemptData.length - 1] : null}
+              />
+            )
+          }
         </div>
-        :
-        null
-      }
       </div>
+    <p style={{fontSize: '14', color: '#999'}} className={classes.MobileOnly}>Swipe the keyboard to view more notes</p>
+      { controlGear }
+      { quizControls }
     </div>
   );
 }

@@ -19,7 +19,7 @@ const Dashboard = (props) => {
         </div>
         :
         <div>
-          <h1 style={{marginBottom: 36}}>Which quiz would you like to play?</h1>
+          <h1>Which quiz would you like to play?</h1>
           <ChooseQuiz
             quizzes={props.quizData}
             clickOnQuiz={props.selectQuiz}
