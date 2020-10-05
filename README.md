@@ -1,7 +1,7 @@
 # Piano quiz
 
 Test your perfect/relative pitch! Play the existing games, or create your own awesome quizzes to share with friends!
-## 👉 [Live demo](https://piano-quiz-39c0d.web.app/)
+👉 [Live demo](https://piano-quiz-39c0d.web.app/)
 
 ## About this project
 
