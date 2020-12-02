@@ -1,7 +1,6 @@
 .Piano {
   display: flex;
   justify-content: center;
-
 }
 
 .GrandPiano {
@@ -13,7 +12,7 @@
   position: absolute;
   top: 48px;
   left: -92px;
-  background-color: rgba(178, 204, 214, 1.00);
+  background-color: rgba(178, 204, 214, 1);
   border-radius: 4px;
   padding: 30px;
   display: flex;
@@ -23,25 +22,27 @@
   z-index: 30;
 }
 
-
-.Controls h3, .QuizControls h3 {
+.Controls h3,
+.QuizControls h3 {
   margin: 0;
   margin-bottom: 20px;
 }
 
-.Controls p, .QuizControls p  {
+.Controls p,
+.QuizControls p {
   margin: 0;
 }
 
-.Controls button, .QuizControls button {
+.Controls button,
+.QuizControls button {
   margin-top: 24px;
 }
 
 .QuizControls {
   position: absolute;
   top: -48px;
-  right:0px;
-  background-color: rgba(178, 204, 214, 1.00);
+  right: 0px;
+  background-color: rgba(178, 204, 214, 1);
   border-radius: 4px;
   padding: 30px;
   display: flex;
@@ -132,6 +133,31 @@
   }
 }
 
+.Loading {
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.Loading > div {
+  padding: 30px 50px;
+  box-shadow: 2px 8px 14px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Loading h3 {
+  text-align: center;
+}
 
 @media (max-width: 480px) {
   .MobileOnly {
@@ -167,7 +193,3 @@
     position: static;
   }
 }
-
-
-
-

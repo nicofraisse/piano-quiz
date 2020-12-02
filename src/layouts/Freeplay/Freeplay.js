@@ -1,6 +1,6 @@
-import React from 'react';
-import Piano from '../../components/Piano/Piano';
-import classes from './Freeplay.module.css';
+import React from 'react'
+import Piano from '../../components/Piano/Piano'
+import classes from './Freeplay.module.css'
 
 const Freeplay = () => {
   return (
@@ -11,4 +11,4 @@ const Freeplay = () => {
   )
 }
 
-export default Freeplay;
+export default Freeplay
