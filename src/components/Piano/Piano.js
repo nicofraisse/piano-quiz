@@ -14,9 +14,25 @@ import classes from './Piano.module.css'
 
 const Piano = (props) => {
   const [controlsShowing, setControlsShowing] = useState(true)
-  const [volume, setVolume] = useState(0.9)
+  const [volume, setVolume] = useState(0)
   const [loading, setLoading] = useState(true)
   const [labelShowing, setLabelShowing] = useState(false)
+
+  Howler.volume(volume)
+
+  useEffect(() => {
+    loadSounds(audioClips).then(
+      () => {
+        setVolume(0.9)
+        setLoading(false)
+      } // can make component to adjust user volume
+    )
+  }, [])
+
+  useEffect(() => {
+    setControlsShowing(!controlsShowing)
+  }, [props.showControls])
+
   const pressNote = (note) => {
     soundPlay(audioClips[note])
     if (props.quiz) {
@@ -26,15 +42,10 @@ const Piano = (props) => {
     }
   }
 
-  useEffect(() => {
-    Howler.volume(0) // set volume to 0 while loading sounds
-    loadSounds(audioClips).then(
-      () => {
-        Howler.volume(volume)
-        setLoading(false)
-      } // can make component to adjust user volume
-    )
-  }, [])
+  const adjustVolume = (e) => {
+    setVolume(Number.parseInt(e.target.value) / 100)
+    console.log('adjusnting')
+  }
 
   let controlGear = null
   if (!props.quiz) {
@@ -71,6 +82,7 @@ const Piano = (props) => {
       </span>
     )
   }
+
   let quizControls = null
   if (props.quiz) {
     quizControls = controlsShowing ? (
@@ -96,14 +108,6 @@ const Piano = (props) => {
         </button>
       </div>
     ) : null
-  }
-
-  useEffect(() => {
-    setControlsShowing(!controlsShowing)
-  }, [props.showControls])
-
-  const adjustVolume = (e) => {
-    setVolume(Number.parseInt(e.target.value) / 100)
   }
 
   return (
