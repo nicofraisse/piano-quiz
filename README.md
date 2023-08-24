@@ -5,11 +5,11 @@ Test your perfect/relative pitch! Play the existing games, or create your own aw
 
 ## About this project
 
-This project was designed & built in under 48 hours for the [Mintbean Careerhack Hackathon](https://www.mintbean.io/). It was [nominated first place](https://www.linkedin.com/posts/mintbean_100daysofcode-quiz-music-activity-6718598666141138944-c-ai)
+This project was designed & built in under 48 hours for [Mintbean Careerhack Hackathon](https://www.mintbean.io/). It was [nominated for first place](https://www.linkedin.com/posts/mintbean_100daysofcode-quiz-music-activity-6718598666141138944-c-ai)
 
 ## How to use
 
-The quiz can be difficult to answer for users without the knowledge of a musical instrument. However, the app UI should make it at least understandable for everyone. 
+The quiz can be difficult for users without knowledge of a musical instrument. However, the app UI should make it at least understandable for everyone. 
 1. Choose a quiz to play.
 2. Press "Play" and listen to the notes. If you are on a mobile device, make sure you are not in silent mode.
 3. Try to reproduce the notes heard on the keyboard. There will be visual feedback (green/red) on the notes telling you if you've succeeded. 
@@ -20,7 +20,7 @@ The quiz can be difficult to answer for users without the knowledge of a musical
 - Play the default quizzes
 - Create your own quiz
 - Share a quiz with friends. To do that, click the share icon from the "Choose a quiz" tab and paste the link.
-- Freeplay (no rules, just a play the keyboard and have fun)
+- Freeplay (no rules, just play the keyboard and have fun)
 
 ## Technologies used
 
@@ -32,8 +32,8 @@ The quiz can be difficult to answer for users without the knowledge of a musical
 
 - [X] Mobile responsiveness
 - [ ] Form validations
-- [ ] Landing page is a pop-up on the homepage
-- [ ] Prevent from spamming play
+- [ ] The landing page should bahave as a pop-up on the homepage instead of having a separate route
+- [ ] Prevent spamming play
 
 
 
